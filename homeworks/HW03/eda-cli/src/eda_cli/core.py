@@ -6,6 +6,8 @@ from typing import Any, Dict, List, Optional, Sequence
 import pandas as pd
 from pandas.api import types as ptypes
 
+import re
+
 
 @dataclass
 class ColumnSummary:
@@ -170,7 +172,7 @@ def top_categories(
     return result
 
 
-def compute_quality_flags(summary: DatasetSummary, missing_df: pd.DataFrame) -> Dict[str, Any]:
+def compute_quality_flags(summary: DatasetSummary, missing_df: pd.DataFrame, df: pd.DataFrame) -> Dict[str, Any]:
     """
     Простейшие эвристики «качества» данных:
     - слишком много пропусков;
@@ -185,9 +187,13 @@ def compute_quality_flags(summary: DatasetSummary, missing_df: pd.DataFrame) -> 
     flags["max_missing_share"] = max_missing_share
     flags["too_many_missing"] = max_missing_share > 0.5
 
-    # has_constant_columns
+    has_constant_columns: bool = any(df[col].nunique() == 1 for col in df.columns)
+    flags["has_constant_columns"] = has_constant_columns
 
-    # has_suspicious_id_duplicates
+    id_pattern = re.compile(r"(?i)_id$|^id$") # "id" или заканчивается на "_id"
+    id_columns = [col for col in df.columns if id_pattern.search(col)]
+    has_suspicious_id_duplicates: bool = any(not df[col].is_unique for col in id_columns)
+    flags["has_suspicious_id_duplicates"] = has_suspicious_id_duplicates
 
     # Простейший «скор» качества
     score = 1.0
