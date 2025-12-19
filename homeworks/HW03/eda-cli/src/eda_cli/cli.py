@@ -61,12 +61,28 @@ def overview(
 
 
 @app.command()
+def head(
+    path: str = typer.Argument(..., help="Путь к CSV-файлу."),
+    sep: str = typer.Option(",", help="Разделитель в CSV."),
+    encoding: str = typer.Option("utf-8", help="Кодировка файла."),
+    n: int = typer.Option(5, help="Количество первых строк датасета для отображения.")
+) -> None:
+    """Вывести первые n строк датасета."""
+    df = _load_csv(Path(path), sep=sep, encoding=encoding)
+
+    typer.echo(f"Первые {n} строк датасета:")
+    typer.echo(df.head(n).to_string())
+
+
+@app.command()
 def report(
     path: str = typer.Argument(..., help="Путь к CSV-файлу."),
     out_dir: str = typer.Option("reports", help="Каталог для отчёта."),
     sep: str = typer.Option(",", help="Разделитель в CSV."),
     encoding: str = typer.Option("utf-8", help="Кодировка файла."),
     max_hist_columns: int = typer.Option(6, help="Максимум числовых колонок для гистограмм."),
+    top_k_categories: int = typer.Option(5, help="Максимум top-значений для категориальных признаков."),
+    title: str = typer.Option("EDA-отчёт", help="Заголовок отчёта report.md.")
 ) -> None:
     """
     Сгенерировать полный EDA-отчёт:
@@ -86,7 +102,7 @@ def report(
     summary_df = flatten_summary_for_print(summary)
     missing_df = missing_table(df)
     corr_df = correlation_matrix(df)
-    top_cats = top_categories(df)
+    top_cats = top_categories(df, top_k=top_k_categories)
 
     # 2. Качество в целом
     quality_flags = compute_quality_flags(summary, missing_df, df)
@@ -102,7 +118,7 @@ def report(
     # 4. Markdown-отчёт
     md_path = out_root / "report.md"
     with md_path.open("w", encoding="utf-8") as f:
-        f.write(f"# EDA-отчёт\n\n")
+        f.write(f"# {title}\n\n")
         f.write(f"Исходный файл: `{Path(path).name}`\n\n")
         f.write(f"Строк: **{summary.n_rows}**, столбцов: **{summary.n_cols}**\n\n")
 
