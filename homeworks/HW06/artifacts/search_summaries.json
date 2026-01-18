@@ -1,0 +1,32 @@
+{
+  "LogReg": {
+    "best_params": {
+      "logreg__C": 0.01,
+      "logreg__penalty": "l1"
+    },
+    "best_cv_roc_auc": 0.8234498118873759
+  },
+  "DecisionTree": {
+    "best_params": {
+      "ccp_alpha": 0.0,
+      "max_depth": null,
+      "min_samples_leaf": 20
+    },
+    "best_cv_roc_auc": 0.7878843520028387
+  },
+  "RandomForest": {
+    "best_params": {
+      "max_depth": null,
+      "max_features": "sqrt",
+      "min_samples_leaf": 10
+    },
+    "best_cv_roc_auc": 0.888254139124084
+  },
+  "AdaBoost": {
+    "best_params": {
+      "learning_rate": 1.0,
+      "n_estimators": 100
+    },
+    "best_cv_roc_auc": 0.8633277862810417
+  }
+}
