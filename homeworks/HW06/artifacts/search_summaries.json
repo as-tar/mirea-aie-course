@@ -1,5 +1,5 @@
 {
-  "LogReg": {
+  "LogisticRegression": {
     "best_params": {
       "logreg__C": 0.01,
       "logreg__penalty": "l1"
