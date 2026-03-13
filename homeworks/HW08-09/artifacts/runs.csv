@@ -1,0 +1,8 @@
+exp_id,optimizer,lr,weight_decay,momentum,epochs_trained,best_val_accuracy,best_val_loss,dataset,seed,model_summary
+E1,Adam,0.001,0.0,0.0,6,0.8300347222222222,0.5331818189885881,EMNIST,42,"hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | batchnorm=False"
+E2,Adam,0.001,0.0,0.0,6,0.8201388888888889,0.5626828047964308,EMNIST,42,"hidden_dims=(256,128) | activation=ReLU | dropout_p=0.2 | batchnorm=False"
+E3,Adam,0.001,0.0,0.0,6,0.8510416666666667,0.4601013481616974,EMNIST,42,"hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | batchnorm=True"
+E4,Adam,0.001,0.0,0.0,10,0.8557291666666667,0.451472885078854,EMNIST,42,"hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | batchnorm=True"
+O1,Adam,0.1,0.0,0.0,6,0.8201388888888889,0.5926458040873209,EMNIST,42,"hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | batchnorm=True"
+O2,Adam,1e-05,0.0,0.0,6,0.5954861111111112,2.1688811937967936,EMNIST,42,"hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | batchnorm=True"
+O3,SGD,0.001,0.0001,0.9,12,0.8176215277777777,0.6075742840766907,EMNIST,42,"hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | batchnorm=True"
