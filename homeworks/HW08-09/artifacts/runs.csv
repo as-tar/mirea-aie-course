@@ -1,8 +1,8 @@
-experiment_id, optimizer, lr   , weight_decay, momentum, epochs_trained, best_val_accuracy , best_val_loss      , dataset, seed, model_summary
-E1           , Adam     , 0.001,       0.0   ,      0.0,              6, 0.8254340277777777, 0.5430627034770118 , EMNIST ,   42, "hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | use_batchnorm=False"
-E2           , Adam     , 0.001,       0.0   ,      0.0,              6, 0.82890625        , 0.5329988843864865 , EMNIST ,   42, "hidden_dims=(256,128) | activation=ReLU | dropout_p=0.2 | use_batchnorm=False"
-E3           , Adam     , 0.001,       0.0   ,      0.0,              6, 0.8515625         , 0.45199404690000744, EMNIST ,   42, "hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | use_batchnorm=True"
-E4           , Adam     , 0.001,       0.0   ,      0.0,              9, 0.8505208333333333, 0.4532185918755002 , EMNIST ,   42, "hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | use_batchnorm=True"
-O1           , Adam     , 0.1  ,       0.0   ,      0.0,              6, 0.8092013888888889, 0.6062666840023465 , EMNIST ,   42, "hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | use_batchnorm=True"
-O2           , Adam     , 1e-05,       0.0   ,      0.0,              6, 0.6075520833333333, 2.1779366652170817 , EMNIST ,   42, "hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | use_batchnorm=True"
-O3           , SGD      , 0.001,       0.0001,      0.9,             12, 0.8217881944444444, 0.603443361653222  , EMNIST ,   42, "hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | use_batchnorm=True"
+experiment_id,optimizer,lr,weight_decay,momentum,epochs_trained,best_val_accuracy,best_val_loss,dataset,seed,model_summary
+E1,Adam,0.001,0.0,0.0,6,0.8254340277777777,0.5430627034770118,EMNIST,42,"hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | use_batchnorm=False"
+E2,Adam,0.001,0.0,0.0,6,0.82890625,0.5329988843864865,EMNIST,42,"hidden_dims=(256,128) | activation=ReLU | dropout_p=0.2 | use_batchnorm=False"
+E3,Adam,0.001,0.0,0.0,6,0.8515625,0.45199404690000744,EMNIST,42,"hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | use_batchnorm=True"
+E4,Adam,0.001,0.0,0.0,9,0.8505208333333333,0.4532185918755002,EMNIST,42,"hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | use_batchnorm=True"
+O1,Adam,0.1,0.0,0.0,6,0.8092013888888889,0.6062666840023465,EMNIST,42,"hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | use_batchnorm=True"
+O2,Adam,1e-05,0.0,0.0,6,0.6075520833333333,2.1779366652170817,EMNIST,42,"hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | use_batchnorm=True"
+O3,SGD,0.001,0.0001,0.9,12,0.8217881944444444,0.603443361653222,EMNIST,42,"hidden_dims=(256,128) | activation=ReLU | dropout_p=0.0 | use_batchnorm=True"
