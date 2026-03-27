@@ -1,0 +1,5 @@
+experiment_id,task,dataset,seed,split_summary,window_size,horizon,model_summary,features_summary,scaler,optimizer,lr,epochs_trained,best_val_mae,best_val_rmse,best_val_mape,test_mae,test_rmse,test_mape,notes
+B1,forecasting,S12-hw-dataset.csv,42,70/15/15 temporal,1,1,Naive-last,lag_1,,,,,6.4406201550387605,8.203475383768334,4.392183983392367,,,,Baseline: prediction = previous value
+B2,forecasting,S12-hw-dataset.csv,42,70/15/15 temporal,7,1,Moving Average,rolling_mean_7,,,,,12.726609080841639,15.242136544735018,8.830313050776448,,,,Baseline: weekly rolling mean
+B3,forecasting,S12-hw-dataset.csv,42,70/15/15 temporal,14,1,Ridge Regression,"lags, rolling, calendar",StandardScaler (implicit in data prep),Analytical,,,6.3596642463385304,7.887464743256757,4.278561336471549,,,,Classical linear model with feature engineering
+R1,forecasting,S12-hw-dataset.csv,42,70/15/15 temporal,28,1,"GRU (hidden=64, layers=2)",windowed sequences of all features,StandardScaler,Adam,0.001,30.0,0.25569507479667664,0.3419443964958191,77.16072082519531,0.2802640199661255,0.36950936913490295,47.80184555053711,Recurrent Neural Network approach
