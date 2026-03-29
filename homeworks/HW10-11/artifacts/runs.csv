@@ -1,7 +1,7 @@
 experiment_id,lr,epochs_trained,best_val_accuracy,task,dataset,seed,optimizer,test_accuracy,precision,recall,f1,mean_iou,model_summary,notes
-C1,0.001,10.0,0.2196078431372549,classification,Flowers102,42.0,Adam,,,,,,Simple CNN,training without augmentations
-C2,0.001,10.0,0.34509803921568627,classification,Flowers102,42.0,Adam,,,,,,Simple CNN,training with augmentations
-C3,0.001,10.0,0.6892156862745098,classification,Flowers102,42.0,Adam,,,,,,ResNet18 with pretrained weights (fine-tune head-only),training with augmentations
-C4,0.001,10.0,0.8970588235294118,classification,Flowers102,42.0,Adam,0.8741258741258742,,,,,ResNet18 with pretrained weights (fine-tune layer4+fc),training with augmentations
-V1,,,,detection,VOCDetection,,,,0.1727498113614315,0.5075695192246785,0.25776877050762403,0.8577927897355239,FasterRCNN_ResNet50_FPN_V2 with pretrained weights,inference at score_threshold = 0.3
-V2,,,,detection,VOCDetection,,,,0.3222824488423883,0.4858427820358523,0.3875107361188299,0.8618673107303882,FasterRCNN_ResNet50_FPN_V2 with pretrained weights,inference at score_threshold = 0.7
+C1,0.001,10,0.26176470588235295,classification,Flowers102,42,Adam,,,,,,Simple CNN,training without augmentations
+C2,0.001,10,0.36666666666666664,classification,Flowers102,42,Adam,,,,,,Simple CNN,training with augmentations
+C3,0.001,10,0.6754901960784314,classification,Flowers102,42,Adam,,,,,,ResNet18 with pretrained weights (fine-tune head-only),training with augmentations
+C4,0.001,10,0.8970588235294118,classification,Flowers102,42,Adam,0.8762400390307367,,,,,ResNet18 with pretrained weights (fine-tune layer4+fc),training with augmentations
+V1,,,,detection,VOCDetection,42,,,0.5961373915169295,0.9544031311154599,0.7338800692197728,0.8531139310031537,FasterRCNN_ResNet50_FPN_V2 with pretrained weights,inference at score_threshold = 0.3
+V2,,,,detection,VOCDetection,42,,,0.7998971193415638,0.9129158512720157,0.8526777554377628,0.8576131758327014,FasterRCNN_ResNet50_FPN_V2 with pretrained weights,inference at score_threshold = 0.7
