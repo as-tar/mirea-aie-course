@@ -1,2 +1,3 @@
 query,before_retrieved_sources,after_retrieved_sources,changed
-,,,
+Что такое LLM?,"['rag_advantages', 'rag_abstract', 'rag_abstract']","['llm_abstract', 'llm_agents', 'rag_advantages']",True
+Какие есть ограничения у LLM-агентов?,"['rag_evaluation', 'rag_abstract', 'rag_advantages']","['llm_agents', 'rag_evaluation', 'rag_abstract']",True

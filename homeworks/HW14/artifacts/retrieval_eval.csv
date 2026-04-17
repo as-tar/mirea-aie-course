@@ -1,2 +1,9 @@
 query,expected_source,retrieved_sources,hit_at_k
-,,,
+Что такое генерация с дополненной выборкой (RAG) и в чём заключается её основная идея?,['rag_abstract'],"['rag_paradigms', 'rag_abstract', 'rag_evaluation']",1
+Какие основные этапы включает работа RAG-системы?,['rag_abstract'],"['rag_paradigms', 'rag_paradigms', 'rag_evaluation']",0
+Как происходит индексация?,['rag_paradigms'],"['rag_paradigms', 'rag_paradigms', 'rag_paradigms']",1
+Какие существуют техники оптимизации запроса?,['rag_paradigms'],"['rag_paradigms', 'rag_paradigms', 'rag_paradigms']",1
+С какими основными проблемами и ограничениями сталкивается RAG при практическом применении?,['rag_challenges'],"['rag_paradigms', 'rag_paradigms', 'rag_challenges']",1
+В каких областях и приложениях наиболее эффективно применяется технология RAG?,['rag_applications'],"['rag_paradigms', 'rag_applications', 'rag_evaluation']",1
+Какие показатели качества используются для оценки эффективности RAG-систем?,['rag_evaluation'],"['rag_evaluation', 'rag_evaluation', 'rag_paradigms']",1
+Какие есть бенчмарки для оценки RAG?,['rag_evaluation'],"['rag_evaluation', 'rag_applications', 'rag_paradigms']",1
