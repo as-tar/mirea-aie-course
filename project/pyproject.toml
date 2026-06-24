@@ -1,5 +1,5 @@
 [project]
-name = "rag-project"
+name = "project"
 version = "0.1.0"
 description = "RAG по внутренней документации компании"
 readme = "README.md"
