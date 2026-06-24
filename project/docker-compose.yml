@@ -1,0 +1,45 @@
+services:
+  phoenix:
+    build: .
+    container_name: rag_phoenix
+    command: phoenix serve --port 6006 --host 0.0.0.0
+    ports:
+      - "6006:6006"
+    env_file:
+      - .env
+    volumes:
+      - ./artifacts:/app/artifacts
+
+  api:
+    build: .
+    container_name: rag_api
+    command: uvicorn src.service.api:app --host 0.0.0.0 --port 8000 --workers 1
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - PHOENIX_COLLECTOR_ENDPOINT=http://phoenix:6006/v1/traces
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./data:/app/data
+      - ./artifacts:/app/artifacts
+      - ./configs:/app/configs
+    depends_on:
+      - phoenix
+
+  ui:
+    build: .
+    container_name: rag_ui
+    command: streamlit run src/service/app.py --server.address 0.0.0.0 --server.headless=true --client.showErrorDetails=false
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    environment:
+      - API_URL=http://api:8000
+    volumes:
+      - ./configs:/app/configs
+    depends_on:
+      - api

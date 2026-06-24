@@ -1,0 +1,7 @@
+Pipeline,AnswerRelevancyMetric,FaithfulnessMetric
+1. BM25,1.0,1.0
+2. BM25 + Reranker,1.0,1.0
+3. Dense,1.0,1.0
+4. Dense + Reranker,1.0,1.0
+5. Hybrid,1.0,1.0
+6. Hybrid + Reranker,1.0,1.0

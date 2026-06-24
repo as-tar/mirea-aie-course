@@ -1,0 +1,32 @@
+paths:
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+  vector_db: "data/chroma_db"
+  models_cache: "artifacts/models"
+  evaluation: "artifacts/evaluation"
+
+chunking:
+  semantic:
+    breakpoint_threshold_type: "percentile"
+    breakpoint_threshold_amount: 95.0
+  safety:
+    chunk_size: 1000
+    chunk_overlap: 150
+
+retrievers:
+  device: "cpu"
+  k_bm25: 7
+  k_vector: 7
+  k_final: 4
+  hybrid_weights:
+    bm25: 0.3
+    vector: 0.7
+
+llm:
+  temperature: 0.0
+  seed: 42
+  max_tokens: 1024
+
+timeouts:
+  ask: 180
+  admin: 120
